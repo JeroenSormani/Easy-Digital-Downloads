@@ -31,6 +31,8 @@ class Tests_Theme_Compatibility extends WP_UnitTestCase {
 			'post_status' 	=> 'publish'
 		) );
 		$this->go_to( get_permalink( $post_id ) );
+print_r( get_post_class());
+echo get_permalink( $post_id );
 
 		// Test some regular values in a post (should be unaffected)
 		$this->assertContains( 'post', get_post_class() );

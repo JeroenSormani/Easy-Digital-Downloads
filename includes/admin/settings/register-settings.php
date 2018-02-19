@@ -2369,19 +2369,19 @@ add_filter( 'edd_after_setting_output', 'edd_add_setting_tooltip', 10, 2 );
  */
 function edd_update_page_permalinks( $value, $old_value ) {
 
-	if ( ! isset( $old_value['purchase_page_permalink'] ) || $old_value['purchase_page'] !== $value['purchase_page'] ) {
+	if ( isset( $value['purchase_page'] ) && ( ! isset( $old_value['purchase_page_permalink'] ) || $old_value['purchase_page'] !== $value['purchase_page'] ) ) {
 		$value['purchase_page_permalink'] = get_permalink( $value['purchase_page'] );
 	}
 
-	if ( ! isset( $old_value['success_page_permalink'] ) || $old_value['success_page'] !== $value['success_page'] ) {
+	if ( isset( $value['success_page'] ) && ( ! isset( $old_value['success_page_permalink'] ) || $old_value['success_page'] !== $value['success_page'] ) ) {
 		$value['success_page_permalink'] = get_permalink( $value['success_page'] );
 	}
 
-	if ( ! isset( $old_value['failure_page_permalink'] ) || $old_value['failure_page'] !== $value['failure_page'] ) {
+	if ( isset( $value['failure_page'] ) && ( ! isset( $old_value['failure_page_permalink'] ) || $old_value['failure_page'] !== $value['failure_page'] ) ) {
 		$value['failure_page_permalink'] = get_permalink( $value['failure_page'] );
 	}
 
-	if ( ! isset( $old_value['purchase_history_page_permalink'] ) || $old_value['purchase_history_page'] !== $value['purchase_history_page'] ) {
+	if ( isset( $value['purchase_history_page'] ) && ( ! isset( $old_value['purchase_history_page_permalink'] ) || $old_value['purchase_history_page'] !== $value['purchase_history_page'] ) ) {
 		$value['purchase_history_page_permalink'] = get_permalink( $value['purchase_history_page'] );
 	}
 

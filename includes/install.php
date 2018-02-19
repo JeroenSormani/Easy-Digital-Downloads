@@ -158,7 +158,7 @@ function edd_run_install() {
 		);
 
 		$options['purchase_history_page'] = $history;
-		$options['purchase_history_page_permalink'] = get_permalink( $history );
+		$options['purchase_history_page'] = $history;
 	}
 
 	// Populate some default values

@@ -980,7 +980,11 @@ add_action( 'edd_verify_user', 'edd_process_user_account_verification' );
  * @return string The base URL to use for account verification
  */
 function edd_get_user_verification_page() {
-	$url = edd_get_option( 'purchase_history_page_permalink', edd_get_option( 'purchase_history_page', home_url() ) );
+	$url = edd_get_option( 'purchase_history_page_permalink', get_permalink( edd_get_option( 'purchase_history_page', 0 ) ) );
+
+	if ( empty( $url ) ) {
+		$url = home_url();
+	}
 
 	return apply_filters( 'edd_user_verification_base_url', $url );
 }

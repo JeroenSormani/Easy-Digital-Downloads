@@ -113,8 +113,7 @@ function edd_send_to_success_page( $query_string = null ) {
  * @return mixed Full URL to the checkout page, if present | null if it doesn't exist
  */
 function edd_get_checkout_uri( $args = array() ) {
-	$uri = edd_get_option( 'purchase_page_permalink', false );
-	$uri = isset( $uri ) ? get_permalink( $uri ) : NULL;
+	$uri = edd_get_option( 'purchase_page_permalink', get_permalink( 'purchase_page', null ) );
 
 	if ( ! empty( $args ) ) {
 		// Check for backward compatibility
